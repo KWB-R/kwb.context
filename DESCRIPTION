@@ -1,14 +1,21 @@
-Package: kwb.context
 Type: Package
+Package: kwb.context
 Title: Get the function call context and work with it
 Version: 0.1
 Date: 2016-09-01
 Author: Hauke Sonnenberg
-Maintainer: Hauke Sonnenberg <hauke.sonnenberg@kompetenz-wasser.de>
-Description: This package contains functions to get the full tree of function
-  calls that is evaluated when calling a function. The idea is to reuse some of
-  these calls with modified arguments, e.g. to replot a specific plot that was
-  created by an inner plot function that was called from an outer function.
-Imports: kwb.utils, kwb.default
+Maintainer: Hauke Sonnenberg
+    <hauke.sonnenberg@kompetenz-wasser.de>
+Description: This package contains functions to get the
+    full tree of function calls that is evaluated when calling a function.
+    The idea is to reuse some of these calls with modified arguments, e.g.
+    to replot a specific plot that was created by an inner plot function
+    that was called from an outer function.
 License: GPL-2
+Imports: 
+    kwb.utils,
+    kwb.default
+Remotes: 
+    github::kwb-r/kwb.default,
+    github::kwb-r/kwb.utils
 LazyData: TRUE
