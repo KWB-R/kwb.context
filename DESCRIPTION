@@ -1,29 +1,41 @@
-Type: Package
 Package: kwb.context
-Title: Get the function call context and work with it
-Version: 0.1
-Date: 2016-09-01
+Title: Get the Function Call Context and Work with it
+Version: 0.1.0
 Authors@R: 
     c(person(given = "Hauke",
              family = "Sonnenberg",
              role = c("aut", "cre"),
              email = "hauke.sonnenberg@kompetenz-wasser.de",
              comment = c(ORCID = "0000-0001-9134-2871")),
-      person(given = "Kompetenzzentrum Wasser Berlin gGmbH",
+      person(given = "Michael",
+             family = "Rustler",
+             role = "ctb",
+             email = "michael.rustler@kompetenz-wasser.de",
+             comment = c(ORCID = "0000-0003-0647-7726")),
+      person(given = "FAKIN",
+             role = "fnd"),
+      person(given = "Kompetenzzentrum Wasser Berlin gGmbH (KWB)",
              role = "cph"))
-Description: This package contains functions to get the
-    full tree of function calls that is evaluated when calling a function.
-    The idea is to reuse some of these calls with modified arguments, e.g.
-    to replot a specific plot that was created by an inner plot function
-    that was called from an outer function.
-License: GPL-2
+Description: This package contains functions to get the full tree of
+    function calls that is evaluated when calling a function. The idea is
+    to reuse some of these calls with modified arguments, e.g. to replot a
+    specific plot that was created by an inner plot function that was
+    called from an outer function.
+License: MIT + file LICENSE
 URL: https://github.com/KWB-R/kwb.context
 BugReports: https://github.com/KWB-R/kwb.context/issues
 Imports: 
-    kwb.utils,
-    kwb.default
+    kwb.default,
+    kwb.utils
+Suggests: 
+    knitr,
+    covr,
+    rmarkdown
 Remotes: 
     github::kwb-r/kwb.default,
     github::kwb-r/kwb.utils
 Encoding: UTF-8
-LazyData: TRUE
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+VignetteBuilder: knitr
