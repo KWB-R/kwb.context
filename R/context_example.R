@@ -38,11 +38,12 @@ example_one_plot <- function(..., h = 5, v  = 5)
 #' @param  ... arguments passed to \code{abline}
 #'
 #' @export
+#' @importFrom graphics abline
 example_crossline <- function(...)
 {
   logcall("example_crossline", match.call())
 
-  abline(...)
+  graphics::abline(...)
 }
 
 #
@@ -57,7 +58,7 @@ f1 <- function(a, b = 1)
 
 f2 <- function()
 {
-  p1 <- mycall("f1", list(1, 2)) 
+  p1 <- mycall("f1", list(1, 2))
   p2 <- mycall("f1", list(3, 4))
   p3 <- mycall("f1", list(a = 3))
   s <- p1 + p2
