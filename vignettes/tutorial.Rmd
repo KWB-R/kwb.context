@@ -1,0 +1,64 @@
+---
+title: "Tutorial"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Tutorial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(kwb.context)
+# Example script ---------------------------------------------------------------
+if (FALSE)
+{
+  # Load the required libraries
+  library(kwb.utils)
+  library(kwb.context)
+  library(kwb.default) # for setDefault()
+
+  # Set the default context number to 2 (required until now!)
+  funNames <- c(paste0(c("init", "print", "get"), "Context"), "getFunctionCall")
+  for (funName in funNames) {
+    setDefault(funName, number = 2)
+  }
+
+  # Initialise the context tree (currently it's a global list called "CONTEXT1")
+  initContext()
+
+  # Call a function that contains a call of logcall() or that calls other
+  # functions that contain calls of logcall(). The logcall()-calls have the
+  # effect that they save the calling context in the global context tree
+  oldpar <- par(mfrow = c(1, 3), no.readonly = TRUE)
+  example_three_plots()
+
+  # Print the context tree that has been recorded
+  printContext()
+
+  # Change the order of the original plots
+  recall(i = 8)
+  recall(i = 5, main = "Neue Ueberschrift", col = "red", pch = 16, cex = 3)
+  recall(i = 2)
+
+  # Replot the second plot, but with a different colour, plot symbol and size
+  par(oldpar)
+  recall(i = 5, col = "red", pch = 16, cex = 2)
+
+  recall(id = 'example_crossline__2', v = 3:5)
+
+  context <- lapply(getContext(), "[[", "funCall")
+  str(context)
+  traceback(context)
+
+  #x$parent_frame_1
+
+  #test_context_functions()
+}
+```
